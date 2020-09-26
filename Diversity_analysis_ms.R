@@ -7,7 +7,7 @@ rm(list = ls())
 library(vegan)
 
 # Set working directory
-setwd("C:\\Users\\mccarthya\\OneDrive - University College Cork\\Hen Harriers\\Hen Harrier MSc\\Prey Abundance Surveys\\Data\\Data Analysis\\Data & code for publication\\Data")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # Read in data
 diversity_data_raw <- read.csv("Diversity_data.csv")

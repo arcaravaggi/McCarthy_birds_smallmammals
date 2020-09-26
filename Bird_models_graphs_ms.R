@@ -14,7 +14,7 @@ library(PMCMRplus)
 library(car)
 
 # Set working directory
-setwd("C:\\Users\\mccarthya\\OneDrive - University College Cork\\Hen Harriers\\Hen Harrier MSc\\Prey Abundance Surveys\\Data\\Data Analysis\\Data & code for publication\\Data")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # Load in the 3 datafiles
 all_spp <- read.csv("all_spp_complete.csv")
@@ -319,7 +319,7 @@ overview_density_graph <- ggplot(data = graph_data, aes(x= Treatment, y = Estima
   scale_fill_manual(values = greypalette_3) +
   scale_x_discrete(breaks=unique(graph_data$Treatment),
                    limits = c("C", "Y", "O"),
-                   labels = c("Moorland", "Late\nPre-thicket\nForest", "Early\nPre-thicket\nForest")) + #the order of labels is wrong but it comes out correct somehow
+                   labels = c("Moorland", "Late\npre-thicket\nforest", "Early\npre-thicket\nforest")) + #the order of labels is different but it comes out correct
   ylab("Bird density (birds/ha)") +
   xlab("") +
   theme_ac1()
